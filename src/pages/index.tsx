@@ -3,25 +3,26 @@ import Link from "next/link";
 
 export default function Home({ posts }) {
   return (
-    <div className="mb-24 py-12 px-12 md:py-24 md:px-24">
+    <div className="py-12 px-12 md:py-24 md:px-24 max-w-7xl mx-auto">
       <Head>
-        <title>Magic Timo Funhouse</title>
+        <title>Timo's Magical Funhouse</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <header className="pb-12 md:pb-20 relative">
-        <h1 className="font-special">
-          Magic Timo's
+        <h1 className="font-special uppercase fx">
+          <span className="block">Timo's</span>
+          <span className="block">Magical</span>
           <span className="block large">Funhouse</span>
         </h1>
       </header>
 
       <main>
-        <div className="grid grid-cols-1 md:grid-cols-2 -m-5">
+        <div className="">
           {posts.map((post: Post, index: number) => (
             <Link key={post.id} href={`/posts/${post.slug}`}>
-              <a className="block pb-12 md:pr-12 xl:pb-24 xl:pr-36 m-5 card">
-                <h2 className="mb-5">{post.title}</h2>
+              <a className="block pb-12 xl:pb-24 card">
+                <h2 className="mb-5 fx">{post.title}</h2>
                 <p>{post.excerpt}</p>
               </a>
             </Link>

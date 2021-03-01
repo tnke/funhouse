@@ -10,13 +10,28 @@ body {
 h1 {
   @apply font-normal;
 
-  font-size: calc(0.75rem + 3vw);
-  line-height: 1;
+  font-size: calc(5rem + 5vw);
+  line-height: 0.8;
 }
 
 h1 .large {
-  font-size: 175%;
-  text-transform: uppercase;
+  font-size: 100%;
+}
+
+.fx {
+  position: relative;
+}
+
+.fx::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("https://media0.giphy.com/media/c9yCvhJeIcdH2/giphy.gif");
+  background-size: cover;
+  mix-blend-mode: overlay;
 }
 
 h2 {
