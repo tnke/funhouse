@@ -1,0 +1,33 @@
+body {
+  @apply font-body;
+  @apply font-light;
+
+  background-color: #f6f7f0;
+}
+
+h1 {
+  @apply font-heading;
+  @apply font-normal;
+
+  font-size: calc(2rem + 3vw);
+  line-height: 1;
+}
+
+h1 span {
+  font-size: 150%;
+}
+
+h2 {
+  @apply font-heading;
+  @apply font-normal;
+
+  font-size: calc(1rem + 1vw);
+  line-height: 1.2;
+}
+
+p {
+  font-size: calc(1rem + 0.2vw);
+  line-height: 1.75;
+  max-width: 65ch;
+  color: #586253;
+}
