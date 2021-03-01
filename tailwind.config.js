@@ -8,6 +8,7 @@ module.exports = {
     fontFamily: {
       heading: ["Prata", "sans-serif"],
       body: ["Roboto", "sans-serif"],
+      special: ["Oi", "sans-serif"],
     },
     extend: {},
   },

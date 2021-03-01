@@ -14,7 +14,7 @@ h1 {
 }
 
 h1 span {
-  font-size: 150%;
+  font-size: 131%;
 }
 
 h2 {
@@ -22,7 +22,7 @@ h2 {
   @apply font-normal;
 
   font-size: calc(1rem + 1vw);
-  line-height: 1.2;
+  line-height: 1.3;
 }
 
 p {
@@ -30,4 +30,36 @@ p {
   line-height: 1.75;
   max-width: 65ch;
   color: #586253;
+}
+
+.gradient-title {
+  animation: GradientAnimation 20s linear infinite;
+  background: linear-gradient(270deg, #fda7df, #9980fa, #ed4c67, #12cbc4);
+  background-size: 800% 800%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes GradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 50% 100%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.over-title {
+  color: transparent;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: -10px;
+  margin-left: -10px;
 }
