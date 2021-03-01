@@ -1,6 +1,5 @@
 import Head from "next/head";
 import Link from "next/link";
-import { motion } from "framer-motion";
 
 export default function Home({ posts }) {
   return (
@@ -10,14 +9,10 @@ export default function Home({ posts }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <header className="pb-12 md:pb-24 relative">
-        <h1 className="font-special text-center gradient-title">
+      <header className="pb-12 md:pb-20 relative">
+        <h1 className="font-special">
           Magic Timo's
-          <span className="block">Funhouse</span>
-        </h1>
-        <h1 className="font-special text-center over-title" aria-hidden="true">
-          Magic Timo's
-          <span className="block">Funhouse</span>
+          <span className="block large">Funhouse</span>
         </h1>
       </header>
 
