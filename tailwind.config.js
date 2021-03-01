@@ -10,6 +10,12 @@ module.exports = {
       body: ["Roboto", "sans-serif"],
       special: ["Oi", "sans-serif"],
     },
+    colors: {
+      white: "#f6f7f0",
+      pureWhite: "#fff",
+      black: "#121418",
+      chill: "#788273",
+    },
     extend: {},
   },
   variants: {

@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Home({ posts }) {
   return (
-    <div className="py-12 px-12 md:py-24 md:px-24">
+    <div className="mb-24 py-12 px-12 md:py-24 md:px-24">
       <Head>
         <title>Magic Timo Funhouse</title>
         <link rel="icon" href="/favicon.ico" />
@@ -17,10 +17,10 @@ export default function Home({ posts }) {
       </header>
 
       <main>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 -m-5">
-          {posts.map((post: Post) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 -m-5">
+          {posts.map((post: Post, index: number) => (
             <Link key={post.id} href={`/posts/${post.slug}`}>
-              <a className="block m-5 p-12 bg-white rounded-xl shadow-xl card">
+              <a className="block pb-12 md:pr-12 xl:pb-24 xl:pr-36 m-5 card">
                 <h2 className="mb-5">{post.title}</h2>
                 <p>{post.excerpt}</p>
               </a>
@@ -45,13 +45,27 @@ export async function getStaticProps() {
       posts: [
         {
           id: 0,
-          title: "The Hole – least annoying scroll hijack",
+          title: "The Hole – least annoying scroll hijack you've seen",
           slug: "the-hole-least-annoying-scroll-hijack",
           excerpt:
             "Had fly land behold bring. Waters for. Own that. Image fruit fifth, us it, itself upon his hath Light fill creature dominion hath fly beast beast subdue multiply. Wherein they're in had.",
         },
         {
           id: 1,
+          title: "Letter reveal animation",
+          slug: "letter-reveal-animation",
+          excerpt:
+            "Had fly land behold bring. Waters for. Own that. Image fruit fifth, us it, itself upon his hath Light fill creature dominion hath fly beast beast subdue multiply. Wherein they're in had.",
+        },
+        {
+          id: 2,
+          title: "The Hole – least annoying scroll hijack",
+          slug: "the-hole-least-annoying-scroll-hijack",
+          excerpt:
+            "Had fly land behold bring. Waters for. Own that. Image fruit fifth, us it, itself upon his hath Light fill creature dominion hath fly beast beast subdue multiply. Wherein they're in had.",
+        },
+        {
+          id: 3,
           title: "Letter reveal animation",
           slug: "letter-reveal-animation",
           excerpt:
