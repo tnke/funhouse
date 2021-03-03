@@ -1,0 +1,32 @@
+.container {
+  padding-left: 27%;
+}
+
+.header {
+  @apply relative mb-24 pr-24;
+  margin-top: calc(200px + 10vh);
+}
+
+.list {
+  @apply grid grid-cols-2;
+}
+
+.title {
+  @apply uppercase border-white border-b pb-20;
+  font-size: calc(2rem + 5vw);
+  line-height: 0.85;
+  word-spacing: 9999px;
+}
+
+.card {
+  @apply border-white border-b mr-24 mb-24 relative;
+}
+
+.card p {
+  max-width: 42ch;
+}
+
+.outline {
+  @apply block text-black;
+  -webkit-text-stroke: 1px #fff;
+}

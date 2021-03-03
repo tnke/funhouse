@@ -1,0 +1,33 @@
+.post-content p {
+  @apply mb-8;
+  max-width: 60ch;
+}
+
+.post-content p:first-child {
+  font-size: 24px;
+  line-height: 30px;
+  max-width: 55ch;
+}
+
+.post-content h2 {
+  @apply mb-6;
+}
+
+.wp-block-image {
+  @apply mb-6 inline-block;
+}
+
+.wp-block-image > figcaption {
+  @apply mt-5 mb-3 text-center opacity-50;
+  caption-side: bottom;
+  font-size: 14px;
+}
+
+.cp_embed_wrapper,
+iframe {
+  @apply my-12 shadow-2xl;
+  margin-left: calc(50% - 50vw + 50px);
+  margin-right: calc(50% - 50vw + 50px);
+  width: calc(100vw - 100px) !important;
+  background-color: #050505;
+}

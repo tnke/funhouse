@@ -6,15 +6,13 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     fontFamily: {
-      heading: ["Prata", "sans-serif"],
-      body: ["Roboto", "sans-serif"],
-      special: ["Londrina Outline", "sans-serif"],
+      heading: ["Work Sans", "sans-serif"],
+      body: ["Work Sans", "sans-serif"],
+      special: ["Prata", "sans-serif"],
     },
     colors: {
-      white: "#f6f7f0",
-      pureWhite: "#fff",
-      black: "#000",
-      chill: "#788273",
+      white: "#fff",
+      black: "#151515",
     },
     extend: {},
   },

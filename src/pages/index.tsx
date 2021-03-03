@@ -4,45 +4,45 @@ import { motion } from "framer-motion";
 import { getAllPosts } from "../lib/api";
 import {
   fadeInUp,
-  fall,
+  fadeInLeft,
   staggerChildren,
   easeOutExpo,
-  smoothBounce,
 } from "../lib/animations";
+import styles from "../styles/Home.module.css";
 
 export default function Home({ allPosts: { edges } }) {
   return (
-    <div className="py-12 px-12 md:py-24 md:px-24 max-w-5xl mx-auto">
+    <div className={styles.container}>
       <Head>
         <title>Timo's Magical Funhouse</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <header className="pb-12 md:pb-20 relative">
+      <header className={styles.header}>
         <motion.div
           variants={staggerChildren(0.1)}
           initial="hidden"
           animate="show"
         >
-          <h1 className="special font-special uppercase fx">
+          <h1 className={styles.title}>
             <motion.span
-              variants={fall}
-              transition={smoothBounce}
               className="block"
+              transition={{ ease: easeOutExpo, duration: 1 }}
+              variants={fadeInLeft}
             >
               Timo's
             </motion.span>
             <motion.span
-              variants={fall}
-              transition={smoothBounce}
               className="block"
+              transition={{ ease: easeOutExpo, duration: 1 }}
+              variants={fadeInLeft}
             >
               Magical
             </motion.span>
             <motion.span
-              variants={fall}
-              transition={smoothBounce}
-              className="block large"
+              className={styles.outline}
+              transition={{ ease: easeOutExpo, duration: 1 }}
+              variants={fadeInLeft}
             >
               Funhouse
             </motion.span>
@@ -50,43 +50,40 @@ export default function Home({ allPosts: { edges } }) {
         </motion.div>
       </header>
 
-      <main>
-        <motion.div
-          variants={staggerChildren(0.25)}
-          initial="hidden"
-          animate="show"
-          className="relative"
-        >
-          {edges.map(({ node }) => (
+      <motion.main
+        variants={staggerChildren(0.25)}
+        initial="hidden"
+        animate="show"
+        className={styles.list}
+      >
+        {edges.map(({ node }, index: number) => {
+          const { id, slug, title, excerpt, date } = node;
+          const displayDate = new Date(date).toLocaleDateString("fi");
+
+          return (
             <motion.div
-              className="card"
+              key={id}
+              className={styles.card}
               variants={fadeInUp}
               transition={{
                 duration: 1,
                 ease: easeOutExpo,
               }}
-              whileHover={{
-                scale: 1.05,
-                transition: {
-                  duration: 0.5,
-                  ease: easeOutExpo,
-                },
-              }}
             >
-              <Link
-                key={node.id}
-                as={`/posts/${node.slug}`}
-                href={"/posts/[node.slug]"}
-              >
-                <a className="block pb-12 xl:pb-24">
-                  <h2 className="mb-5 fx">{node.title}</h2>
-                  <div dangerouslySetInnerHTML={{ __html: node.excerpt }} />
+              <Link as={`/posts/${slug}`} href={"/posts/[slug]"}>
+                <a className="block relative pb-12 xl:pb-24">
+                  <span className="absolute font-special text-2xl italic top-1 -left-16">
+                    {index < 10 ? `0${index}` : index}
+                  </span>
+                  <h2 className="mb-8">{title}</h2>
+                  <div dangerouslySetInnerHTML={{ __html: excerpt }} />
                 </a>
               </Link>
+              <span className="absolute bottom-4">{displayDate}</span>
             </motion.div>
-          ))}
-        </motion.div>
-      </main>
+          );
+        })}
+      </motion.main>
     </div>
   );
 }

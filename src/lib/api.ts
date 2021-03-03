@@ -29,7 +29,8 @@ export async function getAllPosts() {
             id,
             title
             excerpt
-            slug
+            slug,
+            date
           }
         }
       }

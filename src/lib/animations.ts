@@ -11,6 +11,19 @@ export const fadeInUp = {
   },
 };
 
+export const fadeInLeft = {
+  hidden: {
+    opacity: 0,
+    x: -60,
+    skewX: -5,
+  },
+  show: {
+    opacity: 1,
+    x: 0,
+    skewX: 0,
+  },
+};
+
 export const fall = {
   hidden: {
     opacity: 0,
