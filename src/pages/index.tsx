@@ -1,6 +1,14 @@
 import Head from "next/head";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { getAllPosts } from "../lib/api";
+import {
+  fadeInUp,
+  fall,
+  staggerChildren,
+  easeOutExpo,
+  smoothBounce,
+} from "../lib/animations";
 
 export default function Home({ allPosts: { edges } }) {
   return (
@@ -11,28 +19,73 @@ export default function Home({ allPosts: { edges } }) {
       </Head>
 
       <header className="pb-12 md:pb-20 relative">
-        <h1 className="special font-special uppercase fx">
-          <span className="block">Timo's</span>
-          <span className="block">Magical</span>
-          <span className="block large">Funhouse</span>
-        </h1>
+        <motion.div
+          variants={staggerChildren(0.1)}
+          initial="hidden"
+          animate="show"
+        >
+          <h1 className="special font-special uppercase fx">
+            <motion.span
+              variants={fall}
+              transition={smoothBounce}
+              className="block"
+            >
+              Timo's
+            </motion.span>
+            <motion.span
+              variants={fall}
+              transition={smoothBounce}
+              className="block"
+            >
+              Magical
+            </motion.span>
+            <motion.span
+              variants={fall}
+              transition={smoothBounce}
+              className="block large"
+            >
+              Funhouse
+            </motion.span>
+          </h1>
+        </motion.div>
       </header>
 
       <main>
-        <div className="relative">
+        <motion.div
+          variants={staggerChildren(0.25)}
+          initial="hidden"
+          animate="show"
+          className="relative"
+        >
           {edges.map(({ node }) => (
-            <Link
-              key={node.id}
-              as={`/posts/${node.slug}`}
-              href={"/posts/[node.slug]"}
+            <motion.div
+              className="card"
+              variants={fadeInUp}
+              transition={{
+                duration: 1,
+                ease: easeOutExpo,
+              }}
+              whileHover={{
+                scale: 1.05,
+                transition: {
+                  duration: 0.5,
+                  ease: easeOutExpo,
+                },
+              }}
             >
-              <a className="block pb-12 xl:pb-24 card">
-                <h2 className="mb-5 fx">{node.title}</h2>
-                <div dangerouslySetInnerHTML={{ __html: node.excerpt }} />
-              </a>
-            </Link>
+              <Link
+                key={node.id}
+                as={`/posts/${node.slug}`}
+                href={"/posts/[node.slug]"}
+              >
+                <a className="block pb-12 xl:pb-24">
+                  <h2 className="mb-5 fx">{node.title}</h2>
+                  <div dangerouslySetInnerHTML={{ __html: node.excerpt }} />
+                </a>
+              </Link>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </main>
     </div>
   );
@@ -43,9 +96,6 @@ export async function getStaticProps() {
 
   return {
     props: { allPosts },
-    // Next.js will attempt to re-generate the page:
-    // - When a request comes in
-    // - At most once every minute
-    revalidate: 60, // In seconds
+    revalidate: 60,
   };
 }

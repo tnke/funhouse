@@ -29,7 +29,19 @@ h2 {
 }
 
 .fx {
+  @apply bg-black;
   position: relative;
+}
+
+.fx::before {
+  @apply bg-black absolute;
+  content: "";
+  top: -1px;
+  right: -1px;
+  bottom: -1px;
+  left: -1px;
+  z-index: -1;
+  pointer-events: none;
 }
 
 .fx::after {
@@ -42,6 +54,7 @@ h2 {
   background-image: url("https://media0.giphy.com/media/c9yCvhJeIcdH2/giphy.gif");
   background-size: cover;
   mix-blend-mode: overlay;
+  pointer-events: none;
 }
 
 p {
@@ -49,6 +62,10 @@ p {
 
   font-size: calc(1rem + 0.2vw);
   line-height: 1.75;
+}
+
+.card {
+  transform-origin: left center;
 }
 
 .card p {
