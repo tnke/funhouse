@@ -1,8 +1,13 @@
 import Head from "next/head";
 import Link from "next/link";
 import { getAllPosts, getPostBySlug } from "../../lib/api";
+import ErrorPage from "../components/ErrorPage";
 
 export default function Post({ post }) {
+  if (!post) {
+    return <ErrorPage />;
+  }
+
   const { title, content } = post;
 
   return (

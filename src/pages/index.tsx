@@ -38,52 +38,10 @@ export default function Home({ allPosts: { edges } }) {
   );
 }
 
-interface Post {
-  id: number;
-  title: string;
-  slug: string;
-  excerpt?: string;
-}
-
 export async function getStaticProps() {
   const allPosts = await getAllPosts();
 
   return {
     props: { allPosts },
   };
-
-  // return {
-  //   props: {
-  //     posts: [
-  //       {
-  //         id: 0,
-  //         title: "The Hole – least annoying scroll hijack you've seen",
-  //         slug: "the-hole-least-annoying-scroll-hijack",
-  //         excerpt:
-  //           "Had fly land behold bring. Waters for. Own that. Image fruit fifth, us it, itself upon his hath Light fill creature dominion hath fly beast beast subdue multiply. Wherein they're in had.",
-  //       },
-  //       {
-  //         id: 1,
-  //         title: "Letter reveal animation",
-  //         slug: "letter-reveal-animation",
-  //         excerpt:
-  //           "Had fly land behold bring. Waters for. Own that. Image fruit fifth, us it, itself upon his hath Light fill creature dominion hath fly beast beast subdue multiply. Wherein they're in had.",
-  //       },
-  //       {
-  //         id: 2,
-  //         title: "The Hole – least annoying scroll hijack",
-  //         slug: "the-hole-least-annoying-scroll-hijack",
-  //         excerpt:
-  //           "Had fly land behold bring. Waters for. Own that. Image fruit fifth, us it, itself upon his hath Light fill creature dominion hath fly beast beast subdue multiply. Wherein they're in had.",
-  //       },
-  //       {
-  //         id: 3,
-  //         title: "Letter reveal animation",
-  //         slug: "letter-reveal-animation",
-  //         excerpt:
-  //           "Had fly land behold bring. Waters for. Own that. Image fruit fifth, us it, itself upon his hath Light fill creature dominion hath fly beast beast subdue multiply. Wherein they're in had.",
-  //       },
-  //     ],
-  //   },
-  // };
 }
