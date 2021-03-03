@@ -10,12 +10,22 @@ body {
 h1 {
   @apply font-normal;
 
+  font-size: calc(2rem + 3vw);
+  line-height: 1.2;
+}
+
+h1.special {
   font-size: calc(5rem + 5vw);
   line-height: 0.8;
 }
 
-h1 .large {
-  font-size: 100%;
+h2 {
+  @apply font-heading;
+  @apply font-normal;
+
+  font-size: calc(1.5rem + 1vw);
+  line-height: 1.3;
+  max-width: 20ch;
 }
 
 .fx {
@@ -34,15 +44,6 @@ h1 .large {
   mix-blend-mode: overlay;
 }
 
-h2 {
-  @apply font-heading;
-  @apply font-normal;
-
-  font-size: calc(1.5rem + 1vw);
-  line-height: 1.3;
-  max-width: 20ch;
-}
-
 p {
   @apply text-chill;
 
@@ -52,4 +53,34 @@ p {
 
 .card p {
   max-width: 50ch;
+}
+
+.post-content p {
+  @apply mb-10;
+
+  max-width: 65ch;
+}
+
+.post-content h2 {
+  @apply mb-8 mt-16;
+}
+
+.wp-block-image {
+  @apply mb-10 inline-block;
+}
+
+.wp-block-image > figcaption {
+  @apply my-5 text-center text-chill;
+
+  caption-side: bottom;
+  font-size: 14px;
+}
+
+.cp_embed_wrapper {
+  margin-left: calc(50% - 50vw + 50px);
+  margin-right: calc(50% - 50vw + 50px);
+}
+
+.back-button {
+  font-size: 18px;
 }
