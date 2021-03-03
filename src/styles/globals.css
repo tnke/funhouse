@@ -57,6 +57,12 @@ h2 {
   pointer-events: none;
 }
 
+@media (prefers-reduced-motion) {
+  .fx::after {
+    display: none;
+  }
+}
+
 p {
   @apply text-chill;
 
