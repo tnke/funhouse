@@ -58,7 +58,8 @@ export default function Home({ allPosts: { edges } }) {
       >
         {edges.map(({ node }, index: number) => {
           const { id, slug, title, excerpt, date } = node;
-          const displayDate = new Date(date).toLocaleDateString("fi");
+          const displayDate = new Date(date).toLocaleDateString("en-US");
+          const num = edges.length - index;
 
           return (
             <motion.div
@@ -71,15 +72,17 @@ export default function Home({ allPosts: { edges } }) {
               }}
             >
               <Link as={`/posts/${slug}`} href={"/posts/[slug]"}>
-                <a className="block relative pb-12 xl:pb-24">
-                  <span className="absolute font-special text-2xl italic top-1 -left-16">
-                    {index < 10 ? `0${index}` : index}
+                <a className="block relative pb-20 xl:pb-24">
+                  <span className="absolute font-special text-md md:text-2xl italic top-1 -left-9 md:-left-16">
+                    {num < 10 ? `0${num}` : num}
                   </span>
                   <h2 className="mb-8">{title}</h2>
                   <div dangerouslySetInnerHTML={{ __html: excerpt }} />
                 </a>
               </Link>
-              <span className="absolute bottom-4">{displayDate}</span>
+              <span className="absolute bottom-4">
+                {displayDate.toString()}
+              </span>
             </motion.div>
           );
         })}
