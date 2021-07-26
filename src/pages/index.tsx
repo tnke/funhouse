@@ -8,13 +8,14 @@ import {
   staggerChildren,
   easeOutExpo,
 } from "../lib/animations";
+import { siteTitle } from "../lib/constants";
 import styles from "../styles/Home.module.css";
 
 export default function Home({ allPosts: { edges } }) {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Timo's Magical Funhouse</title>
+        <title>{siteTitle}</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -30,24 +31,30 @@ export default function Home({ allPosts: { edges } }) {
               transition={{ ease: easeOutExpo, duration: 1 }}
               variants={fadeInLeft}
             >
-              Timo's
+              Some
             </motion.span>
             <motion.span
               className="block"
               transition={{ ease: easeOutExpo, duration: 1 }}
               variants={fadeInLeft}
             >
-              Magical
+              Frontend
             </motion.span>
             <motion.span
-              className={styles.outline}
+              className="block"
               transition={{ ease: easeOutExpo, duration: 1 }}
               variants={fadeInLeft}
             >
-              Funhouse
+              Experiments
             </motion.span>
           </h1>
         </motion.div>
+        <p className={styles.subtitle}>
+          Timo Sundvik &ndash; Front-end developer working at{" "}
+          <a href="https://evermade.fi" target="_blank">
+            Evermade
+          </a>
+        </p>
       </header>
 
       <motion.main
@@ -58,7 +65,7 @@ export default function Home({ allPosts: { edges } }) {
       >
         {edges.map(({ node }, index: number) => {
           const { id, slug, title, excerpt, date } = node;
-          const displayDate = new Date(date).toLocaleDateString("en-US");
+          const displayDate = new Date(date).toLocaleDateString("fi");
           const num = edges.length - index;
 
           return (
@@ -72,7 +79,7 @@ export default function Home({ allPosts: { edges } }) {
               }}
             >
               <Link as={`/posts/${slug}`} href={"/posts/[slug]"}>
-                <a className="block relative pb-20 xl:pb-24">
+                <a className="block relative pb-20 xl:pb-24 min-h-full">
                   <span className="absolute font-special text-md md:text-2xl italic top-1 -left-9 md:-left-16">
                     {num < 10 ? `0${num}` : num}
                   </span>

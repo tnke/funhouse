@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import { getAllPosts, getPostBySlug } from "../../lib/api";
+import { siteTitle, titleSeparator } from "../../lib/constants";
 import ErrorPage from "../components/ErrorPage";
 
 export default function Post({ post }) {
@@ -13,7 +14,9 @@ export default function Post({ post }) {
   return (
     <div className="py-12 px-12 md:py-24 md:px-24 max-w-5xl mx-auto">
       <Head>
-        <title>Timo's Magical Funhouse – {title}</title>
+        <title>
+          {title} {titleSeparator} {siteTitle}
+        </title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 

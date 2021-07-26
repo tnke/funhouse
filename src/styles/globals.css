@@ -23,3 +23,7 @@ p {
 .back-button {
   font-size: 18px;
 }
+
+p a {
+  @apply font-medium hover:underline;
+}

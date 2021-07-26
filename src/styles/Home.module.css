@@ -1,7 +1,3 @@
-/* .container {
-  padding-left: 27%;
-} */
-
 @media (min-width: 1024px) {
   .container {
     padding-left: 27%;
@@ -9,7 +5,7 @@
 }
 
 .header {
-  @apply relative mx-12 md:ml-24 lg:ml-0 md:mr-24 mb-24;
+  @apply relative mx-12 md:ml-24 lg:ml-0 md:mr-24 mb-24 border-white border-b;
   margin-top: calc(100px + 20vh);
 }
 
@@ -18,10 +14,15 @@
 }
 
 .title {
-  @apply uppercase border-white border-b pb-20;
+  @apply uppercase pb-20;
   font-size: calc(2rem + 5vw);
   line-height: 0.85;
   word-spacing: 9999px;
+  margin-left: -0.075em;
+}
+
+.subtitle {
+  @apply mb-4;
 }
 
 .card {
