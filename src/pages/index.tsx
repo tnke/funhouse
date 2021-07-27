@@ -80,7 +80,7 @@ export default function Home({ allPosts: { edges } }) {
             >
               <Link as={`/posts/${slug}`} href={"/posts/[slug]"}>
                 <a className="block relative pb-20 xl:pb-24 min-h-full">
-                  <span className="absolute font-special text-md md:text-2xl italic top-1 -left-9 md:-left-16">
+                  <span className="sm:absolute font-special text-md md:text-2xl italic sm:top-1 sm:-left-9 md:-left-16 pb-1 sm:pb-0 block">
                     {num < 10 ? `0${num}` : num}
                   </span>
                   <h2 className="mb-8">{title}</h2>

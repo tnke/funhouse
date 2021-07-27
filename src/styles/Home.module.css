@@ -5,7 +5,7 @@
 }
 
 .header {
-  @apply relative mx-12 md:ml-24 lg:ml-0 md:mr-24 mb-24 border-white border-b;
+  @apply relative mx-6 sm:mx-12 md:mx-24 lg:ml-0 mb-16 sm:mb-24 border-white border-b;
   margin-top: calc(100px + 20vh);
 }
 
@@ -14,8 +14,7 @@
 }
 
 .title {
-  @apply uppercase pb-20;
-  font-size: calc(2rem + 5vw);
+  @apply uppercase pb-14 sm:pb-20 text-4xl sm:text-6xl md:text-8xl xl:text-9xl;
   line-height: 0.85;
   word-spacing: 9999px;
   margin-left: -0.075em;
@@ -26,7 +25,7 @@
 }
 
 .card {
-  @apply border-white border-b mx-12 md:ml-24 lg:ml-0 md:mr-24 mb-24 relative;
+  @apply border-white border-b mx-6 sm:mx-12 md:mx-24 lg:ml-0 mb-16 sm:mb-24 relative;
 }
 
 .card p {

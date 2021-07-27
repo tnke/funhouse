@@ -12,7 +12,7 @@ export default function Post({ post }) {
   const { title, content } = post;
 
   return (
-    <div className="py-12 px-12 md:py-24 md:px-24 max-w-5xl mx-auto">
+    <div className="px-6 py-24 md:px-24 max-w-5xl mx-auto">
       <Head>
         <title>
           {title} {titleSeparator} {siteTitle}
@@ -21,7 +21,7 @@ export default function Post({ post }) {
       </Head>
 
       <Link href={"/"}>
-        <a className="block pb-4 font-heading back-button absolute top-4 left-4 opacity-50 hover:opacity-100">
+        <a className="block pb-4 font-heading back-button absolute top-4 left-6 opacity-50 hover:opacity-100">
           Back
         </a>
       </Link>

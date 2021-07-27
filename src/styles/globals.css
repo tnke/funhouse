@@ -3,14 +3,13 @@ body {
 }
 
 h1 {
-  @apply font-heading font-medium tracking-tight;
+  @apply font-heading font-medium tracking-tight text-4xl sm:text-6xl;
   font-size: calc(1.5rem + 3vw);
   line-height: 1;
 }
 
 h2 {
-  @apply font-heading font-medium tracking-tight;
-  font-size: 40px;
+  @apply font-heading font-medium tracking-tight text-2xl sm:text-4xl;
   line-height: 1.05;
   max-width: 23ch;
 }
